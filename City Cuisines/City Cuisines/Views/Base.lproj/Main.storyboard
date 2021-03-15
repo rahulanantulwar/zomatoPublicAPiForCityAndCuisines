@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WDl-Hi-YHR">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cities-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CitiesViewController" customModule="City_Cuisines" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="hgV-rw-bYJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CZ2-zt-yah"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I20-r6-SsS">
+                                <rect key="frame" x="0.0" y="137" width="414" height="676"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CitiesTableViewCell" id="3Xj-AJ-YRG">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Xj-AJ-YRG" id="V8i-yw-zdk">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="13g-zk-Tio">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I20-r6-SsS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Mc-sc-pN5"/>
+                            <constraint firstItem="13g-zk-Tio" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9FZ-4E-yw8"/>
+                            <constraint firstAttribute="trailing" secondItem="I20-r6-SsS" secondAttribute="trailing" id="G1U-Ad-0g0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I20-r6-SsS" secondAttribute="bottom" id="GuD-VJ-tLr"/>
+                            <constraint firstItem="13g-zk-Tio" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tqd-j0-4jB"/>
+                            <constraint firstItem="I20-r6-SsS" firstAttribute="top" secondItem="hgV-rw-bYJ" secondAttribute="bottom" constant="5" id="UvD-iF-s86"/>
+                            <constraint firstItem="hgV-rw-bYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W7c-yL-slz"/>
+                            <constraint firstItem="hgV-rw-bYJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="f31-0X-wSA"/>
+                            <constraint firstItem="hgV-rw-bYJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yAy-Je-nnJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cities" id="7dB-wX-8EQ"/>
+                    <connections>
+                        <outlet property="citiesSpinner" destination="13g-zk-Tio" id="K6m-cj-ZcD"/>
+                        <outlet property="citiesTableView" destination="I20-r6-SsS" id="W3l-u2-Sbb"/>
+                        <outlet property="searchBarForCities" destination="hgV-rw-bYJ" id="Jph-mZ-Rks"/>
+                        <segue destination="xGq-Ih-4EA" kind="show" identifier="GoToCuisinesVC" id="2NQ-nW-JKu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="174.77678571428569"/>
+        </scene>
+        <!--Cuisines-->
+        <scene sceneID="6Dh-sf-zC8">
+            <objects>
+                <viewController title="Cuisines" id="xGq-Ih-4EA" customClass="CuisinesViewController" customModule="City_Cuisines" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BZj-xE-vJK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search " translatesAutoresizingMaskIntoConstraints="NO" id="QqE-oH-zjB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QXc-jT-Erx"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a0Z-8X-Mmi">
+                                <rect key="frame" x="0.0" y="137" width="414" height="676"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CuisineTableViewCell" id="r9m-TR-dfv">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r9m-TR-dfv" id="r6k-3j-6gK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="04X-8R-i6R">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CkP-ET-dsD" firstAttribute="bottom" secondItem="a0Z-8X-Mmi" secondAttribute="bottom" id="Ht1-KP-7i6"/>
+                            <constraint firstItem="QqE-oH-zjB" firstAttribute="leading" secondItem="CkP-ET-dsD" secondAttribute="leading" id="IHA-fA-mRf"/>
+                            <constraint firstItem="QqE-oH-zjB" firstAttribute="trailing" secondItem="CkP-ET-dsD" secondAttribute="trailing" id="O05-7p-c9A"/>
+                            <constraint firstItem="a0Z-8X-Mmi" firstAttribute="leading" secondItem="CkP-ET-dsD" secondAttribute="leading" id="OUP-uV-NKB"/>
+                            <constraint firstItem="04X-8R-i6R" firstAttribute="centerX" secondItem="BZj-xE-vJK" secondAttribute="centerX" id="RYI-eM-dXh"/>
+                            <constraint firstItem="QqE-oH-zjB" firstAttribute="top" secondItem="CkP-ET-dsD" secondAttribute="top" id="VGr-wF-kBY"/>
+                            <constraint firstItem="04X-8R-i6R" firstAttribute="centerY" secondItem="BZj-xE-vJK" secondAttribute="centerY" id="eF1-Dg-vVb"/>
+                            <constraint firstItem="CkP-ET-dsD" firstAttribute="trailing" secondItem="a0Z-8X-Mmi" secondAttribute="trailing" id="hPA-T4-qjT"/>
+                            <constraint firstItem="a0Z-8X-Mmi" firstAttribute="top" secondItem="QqE-oH-zjB" secondAttribute="bottom" constant="5" id="mPb-Mz-3S5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CkP-ET-dsD"/>
+                    </view>
+                    <connections>
+                        <outlet property="cuisineSpinner" destination="04X-8R-i6R" id="Znj-dj-2Dp"/>
+                        <outlet property="cuisinesTableView" destination="a0Z-8X-Mmi" id="5q7-HI-XTk"/>
+                        <outlet property="searchBarForCuisines" destination="QqE-oH-zjB" id="vT0-ds-sjh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYg-gf-frO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714.49275362318849" y="174.77678571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sTr-rb-sO0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WDl-Hi-YHR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="36R-On-FEc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.46274509803921571" green="0.53725490196078429" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oaF-WP-dAA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wr-uM-sJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-801" y="175"/>
+        </scene>
+    </scenes>
+</document>
